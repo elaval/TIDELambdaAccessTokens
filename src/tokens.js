@@ -26,7 +26,10 @@ api.post('/token', (req,res) => {
 
     dataStorage.createToken(user)
     .then(d => {
-        res.status(200).json({ token: d })
+        res
+        .header('Access-Control-Allow-Origin','*')
+        .status(200)
+        .json({ token: d })
     })
 })
 
@@ -35,7 +38,10 @@ api.get('/token/:token', (req,res) => {
 
     dataStorage.getToken(token)
     .then(d => {
-        res.status(200).json({ token: d })
+        res
+        .header('Access-Control-Allow-Origin','*')
+        .status(200)
+        .json({ token: d })
     })
 })
 
@@ -44,7 +50,10 @@ api.get('/token', (req,res) => {
     
     dataStorage.getTokenCollection(user)
     .then(d => {
-        res.status(200).json({ data: d })
+        res
+        .header('Access-Control-Allow-Origin','*')
+        .status(200)
+        .json({ data: d })
     })
 })
  
