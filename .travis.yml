@@ -31,7 +31,7 @@ deploy:
   local_dir: dist
 
 after_deploy:
-  - aws lambda update-function-code --function TIDELambdaUtilities --s3-bucket visualiza.tideapps.com --s3-key lambda/TIDELambdaAccessTokens/dep.zip --region us-east-1
+  - aws lambda update-function-code --function TIDELambdaAccessTokens --s3-bucket visualiza.tideapps.com --s3-key lambda/TIDELambdaAccessTokens/dep.zip --region us-east-1
 
 notifications:
   email:
